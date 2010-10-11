@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+Adapted for Feedvolley from:
+
+  Theme: Museum v1.3
+  Author: Paul Giacherio  [http://paulgiacherio.com/]
+  For: Tumblr  [http://tumblr.com/]
+  Terms: Free to use and alter, but please give credit.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{Title}</title>
+
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	text-decoration:none;}
+body{
+	background:#111 url(http://themes.paulgiacherio.com/museum/bg2.jpg) fixed top center;
+	font-family:arial,san-serif;
+	font-size:12px;
+	color:#949494;
+	text-align:center;}
+#container{
+	width:auto;
+	margin:0 27px;
+	text-align:left;}
+	
+/*HEADER STYLES*/
+#header{
+	padding:27px 0 36px 27px;
+	position:relative;
+	text-align:left;}
+#header a{
+	color:#777;}
+#header a:hover{
+	color:#fff;}
+#header h1 a{
+	border:0;
+	font-size:17px;
+	line-height:18px;
+	text-transform:uppercase;
+	letter-spacing:.05em;}
+#header ul li{
+	display:inline;}
+#header ul li a{
+	border-bottom:0;
+	margin-right:11px;
+	line-height:18px;}
+#header ul li a:hover{
+	border-bottom:0px}
+#portrait{
+	width:54px;
+	float:left;}	
+	
+/*MAIN BOXES*/
+.post{
+	padding:10px;
+	float:left;
+	background:#000;
+	margin-right:10px;
+	margin-bottom:10px;
+	position:relative;
+	line-height:18px;}
+.photo,.quote,.link,.conversation,.video,.audio,.regular{
+	min-height:350px;
+	width:530px;}
+body#index .regular,body#index .photo,body#index .quote,body#index .link,body#index .conversation,body#index .video,body#index .audio,.metabox{
+	height:350px;
+	width:250px;
+	overflow:hidden;}
+
+
+/*PERMALINK AND COMMENT COUNT LINKS*/	
+.permalink, .disquscount {
+	border-width: 0px;
+	height: 11px;
+	line-height:11px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	color:#444;
+	z-index:200;
+	display:none/*HIDE ON PERMALINK PAGES*/}
+body#index .permalink, body#index .disquscount{
+	display:block;}	
+.disquscount{
+	right:auto;
+	left:10px;
+	color:#444;}
+.permalink:hover,.disquscount:hover{
+	color:#fff;
+	border:0;}
+
+/*REGULAR TEXT POST STYLES*/
+body#index .pad{
+	padding-top:36px;}
+
+/*GENERAL CONTENT STYLES*/
+a {
+	color:#FFF;
+	border-bottom:1px dotted #444;
+	text-decoration:none;}
+a:hover{
+	color:#ccc;
+	border-bottom:1px solid #ccc;}
+p{
+	line-height:18px;
+	margin-bottom:9px;}
+h1,.photo strong, .photo b, .video strong, .video b, .audio strong, .audio b{
+	font-weight:normal;
+	font-size:16px;
+	line-height:18px;
+	color:#FFF;}
+h1{
+	padding:0 0 9px 0;}
+h2{
+	font-size:12px;
+	font-weight:normal;
+	text-transform:uppercase;
+	color:#e00;
+	margin:9px 0 9px 0;}
+h3{
+	text-transform:uppercase;
+	font-size:10px;
+	color:#fff;
+	line-height:18px;}
+ol{
+	margin-bottom:9px;}
+ol li{
+	list-style:decimal outside;
+	margin:0 0 0 20px;
+	padding:0 0 5px 0;}
+blockquote{
+	margin:0 20px 9px;}
+	
+/*PAGENAVIGATION BOX STYLES*/
+#navigation/*HIDDEN ON PERMALINK PAGES*/{
+	display:none;}	
+body#index #navigation{
+	display:block;
+	text-align:center;
+	float:left;
+	background:#000;
+	height:370px;
+	width:270px;
+	position:relative;}
+#pagetab{
+	height: 11px;
+	line-height:10px;
+	font-size:11px;
+	position: absolute;
+	top: 0px;
+	left: 20px;
+	color:#949494;
+	padding:15px 7px 7px;
+	background:#222;}
+.pages{
+	line-height:225px;
+	font-size:11px;}
+.pages span{
+	font-size:110px;
+	vertical-align:middle;}
+.total{
+	color:#222;}
+#navigation a{
+	border:1px solid #222;
+	line-height:27px;
+	padding:5px 9px;
+	color:#444;}
+#navigation a:hover{
+	background:#111;
+	color:#fff;}
+
+/*FOOTER STYLES*/	
+#footer{
+	color:#555;
+	clear:both;
+	padding:40px 0;
+	text-align:left;}
+#footer a{
+	color:#555;
+	border:0;}
+#footer a:hover{
+	color:#fff;}
+
+</style>
+
+<!--[if IE 6]>
+<style type="text/css">
+.post,#navigation,.meta{background:#010101;}
+.photo,.quote,.link,.conversation,.video,.audio,.regular{height:350px;overflow:visible;}
+body#index .fade{z-index:100;position:absolute;bottom:8px;}
+</style>
+<script type="text/javascript" src="http://themes.paulgiacherio.com/museum/supersleight-min.js"></script>
+<![endif]-->
+</head>
+
+<body id="index">				
+    <div id="header">
+        <h1><a href="/">{Title}</a></h1>
+		<ul>
+		<li><a href="{RSS}">rss feed</a></li>
+		</ul>
+	</div>
+	
+	<div id="container">        
+    {block:Posts}
+		<div class="post {TagsAsClasses}">
+			
+			{block:Regular}
+			<div class="regular">		
+				<div class="pad"><!--PAD BUMPS INDEX PAGE TEXT-->
+					{block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+                    {Body}
+				</div>
+				<a href="{Permalink}" class="permalink">{MonthNumber}.{DayOfMonthWithZero}.{ShortYear}</a>
+				<!--UNCOMMENT BELOW TO ENABLE COMMENTS COUNT FOR REGULAR POSTS-->
+			</div>
+			{/block:Regular}
+			
+        </div><!--CLOSE POST-->
+		
+    {/block:Posts}
+	
+	<div id="footer">
+		<a href="{RSS}">rss feed</a> | adapted from tumblr's museum theme by <a href="http://paulgiacherio.com" target="_blank">paulgiacherio</a>
+	</div>
+	
+</div><!--CLOSE CONTAINER-->
+
+</body>
+</html>

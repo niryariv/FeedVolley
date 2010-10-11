@@ -1,0 +1,56 @@
+<p>
+	Feedvolley themes use a subset of <a href="http://www.tumblr.com/help/custom_themes">Tumblr's markup</a>, existing Tumblr themes can usually be used with little or no modifications. All Tumblr tags are supported - ie, will not show up in the rendered HTML - but only the following are relevant for Feedvolley's purposes (<i>all tags are case sensitive</i>):
+</p>
+
+<p>&nbsp;</p>
+
+<p>
+	<b>Page Elements</b>
+	<ul>
+		<ul>
+			<li>&nbsp;&nbsp;<tt>{Title}</tt> Page title - either user customized or, by default, RSS feed's &lt;title&gt; tag</li>
+			<li>&nbsp;&nbsp;<tt>{RSS}</tt> Feed URL</li>
+			<li>&nbsp;&nbsp;<tt>{Description}</tt> Feed description (RSS &lt;description&gt; tag)</li>
+			<li>&nbsp;&nbsp;<tt>{Favicon}</tt> Feed favicon URL</li>
+		</ul>
+	</ul>
+</p>
+
+<p>&nbsp;</p>
+
+<p>
+	<b>Item Elements</b>
+	<ul>
+		<li>&nbsp;&nbsp;<tt>{block:Text}</tt> or <tt>{block:Regular}</tt> Limit a single item (post) block (RSS &lt;item&gt; tag)</li>
+		<ul>
+			<li>&nbsp;&nbsp;<tt>{Permalink}</tt>Item URL (RSS &lt;link&gt; tag)</li>
+			<li>&nbsp;&nbsp;<tt>{Title}</tt> Item title (RSS &lt;title&gt; tag)</li>
+			<li>&nbsp;&nbsp;<tt>{Description}</tt> Content of RSS item's &lt;description&gt; tag</li>
+			<li>&nbsp;&nbsp;<tt>{Enclosure}</tt> Content of RSS item's &lt;enclosure&gt; tag</li>
+			<li>&nbsp;&nbsp;<tt>{Body}</tt> {Description} + {Enclosure} - will omit the enclosure if its URL is already present in description</li>
+		</ul>
+	</ul>
+</p>
+
+<p>&nbsp;</p>
+
+<p>
+	<b>Dates</b>
+	<ul>
+		<li>&nbsp;&nbsp;<tt>{block:SameDayDate}</tt> and <tt>{block:NewDayDate}</tt> let you distinguish between posts published on different days.
+		<li>&nbsp;&nbsp; All Tumblr's date elements are supported, including <tt>{DayOfMonth}, {DayOfMonthWithZero}, {DayOfWeek}, {ShortDayOfWeek}, 	{DayOfWeekNumber}, {DayOfMonthSuffix}, {DayOfYear}, {WeekOfYear}, {Month}, {ShortMonth}, {MonthNumber}, {MonthNumberWithZero}, {Year}, {ShortYear}, {AmPm}, {CapitalAmPm}, {12Hour}, {24Hour}, {12HourWithZero}, {24HourWithZero}, {Minutes}, {Seconds}, {Beats}</tt>
+		</li>
+	</ul>
+</p>
+
+<p>&nbsp;</p>
+
+<p>
+	<b>Custom Colors</b>
+	<ul>
+		<li>&nbsp;&nbsp; You can allow easy color customization by using a meta name tag to define a color name and code. Feedvolley will place the color code instead of that color name in the HTML or CSS. For example: <tt>&lt;meta name="color:Background" content="#eee"/&gt;</tt> lets you use <tt>&lt;body bgcolor="{color:Background}"&gt;</tt></li>
+	</ul>
+</p>
+
+
+<!-- ?php require_once APPPATH . 'views/layouts/footer.php'; ? -->

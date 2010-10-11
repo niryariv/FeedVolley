@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- 
+  Theme: Sunday Edition  v1.7
+  Author: Bill Israel  [http://cubicle17.com/]
+  For: Tumblr  [http://tumblr.com/]
+  Terms: Free to use and alter, but please give credit.
+
+  - Adapted for Feedvolley -
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>{Title}</title>
+    
+    <!-- DEFAULT COLORS -->
+    <meta name="color:Background Color" content="#ffffee"/>
+    <meta name="color:Text" content="#333333"/>
+    <meta name="color:Link Color" content="#aa5500"/>
+    <meta name="color:Link Hover Color" content="#000000"/>
+    <meta name="color:Header Color" content="#000000"/>
+    <meta name="color:Date Text" content="#999999"/>
+    <meta name="color:Date Color" content="#000000"/>
+    <meta name="color:Image Border" content="#333333"/>
+    <meta name="color:Image Background" content="#eeeeee"/>
+    <meta name="color:PreviousNext Color" content="#999999"/>
+    <meta name="color:Footer Border Color" content="#333333"/>
+    
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+    <style type="text/css" media="screen">
+      body {
+        background: {color:Background Color};
+        color: {color:Text};
+        font: normal 14px Garamond, Georgia, serif;
+        margin: 0;
+        text-align: center;
+        line-height: 1.5em;
+      }
+      
+      a, a:visited, a:active {
+        color: {color:Link Color};
+        outline: 0;
+      }
+      
+      a:hover {
+        color: {color:Link Hover Color};
+      }
+      
+      #content {
+        margin: 0 auto;
+        width: 40em;
+        text-align: left;
+      }
+      
+      /* Title and Description */
+      h1 {
+        border-bottom: 3px solid {color:Header Color};
+        border-top: 5px solid {color:Header Color};
+        font-size: 3em;
+        line-height: 1;
+        margin: 0;
+        padding: .5em 0 .75em 0;
+      }
+      
+      h1 a, h1 a:active, h1 a:visited { 
+        color: {color:Header Color};
+        text-decoration: none;
+      }
+      
+      h1 a:hover {
+        color: {color:Link Color};
+      }
+      
+      h2 {
+        color: {color:Link Color};
+        font-size: 1.25em;
+        font-weight: normal;
+        margin: 0 0 3em;
+        text-align: right;
+      }
+      
+      
+      /* Dates */
+      .newdate, .samedate {
+        float: left;
+        width: 7em;
+        color: {color:Date Text};
+        text-align: center;
+      }
+      
+      
+      /* Permalinks Info */
+      a.date {
+        border-bottom: 1px solid {color:Date Color};
+        clear: left;
+        color: {color:Date Color};
+        display: block;
+        margin-bottom: .5em;
+        padding-bottom: .5em;
+        text-decoration: none;
+      }
+      
+      a.date:hover {
+        border-bottom: 1px solid {color:Link Color};
+        color: {color:Link Color};
+      }
+      
+      
+      /* Common to all posts */
+      .regular, .quote, .link, .photo, .video, .conversation, .audio {
+        margin-bottom: 4.5em;
+        margin-left: 8em;
+      }
+      
+      .regular h3, .link h3, .conversation h3 {
+        font-size: 1.5em;
+        margin: 0 0 .5em;
+      }
+      
+      
+      /* Regular Posts */
+      .regular blockquote, .link blockquote {
+        border-left: 3px solid {color:Header Color};
+        font-weight: bold;
+        margin: 1em 2em;
+        padding: 0 0 0 .5em;
+      }
+      
+      .regular ul, .regular ol {
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+      
+      
+      
+      /* Footer */
+      #footer {
+        border-top: 2px solid {color:Footer Border Color};
+        clear: both;
+        font-size: .9em;
+        padding: .5em 0 1em;
+      }
+      
+      #footer h3 {
+        margin: 0;
+        padding: 0;
+      }
+      
+      #footer ul {
+        margin: 1em 0;
+        padding: 0;
+        text-align: center;
+      }
+      
+      #footer ul li {
+        display: inline;
+        margin: 0 .5em;
+      }
+      
+      /* Custom CSS */
+      {CustomCSS}
+    </style>
+  </head>
+  
+  <body>
+    <div id="content">
+      <h1><a href="/">{Title}</a></h1>
+      <h2>{Description}</h2>
+      
+      <div id="posts" class="autopagerize_page_element">
+      {block:Posts}
+        {block:NewDayDate}
+        <div class="newdate">
+          <a href="{Permalink}" class="date">{ShortMonth} {DayOfMonth}, {Year}</a>
+          {12Hour}:{Minutes}{AmPm}
+        </div>
+        {/block:NewDayDate}
+        {block:SameDayDate}
+        <div class="samedate">
+          <a href="{Permalink}" class="date">{ShortMonth} {DayOfMonth}, {Year}</a>
+          {12Hour}:{Minutes}{AmPm}
+        </div>
+        {/block:SameDayDate}
+        
+        {block:Text}
+        <div class="regular">
+          {block:Title}<h3>{Title}</h3>{/block:Title}
+          {Body}
+        </div>
+        {/block:Text}
+      
+      {/block:Posts}
+      </div> <!-- end posts -->
+            
+      <div id="footer">
+        <ul>
+          <li><strong>Powered by</strong>: <a href="http://feedvolley.com/">Feedvolley</a></li>
+          <li><strong>Theme adapted from "Sunday Edition" by</strong>: <a href="http://cubicle17.com/">Bill Israel</a></li>
+          <li><strong>Syndicated by</strong>: <a href="{RSS}">RSS</a></li>
+      </div>
+    </div>
+  </body>
+</html>

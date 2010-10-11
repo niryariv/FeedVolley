@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <!-- DEFAULT COLORS -->
+        <meta name="color:Background" content="#666"/>
+        <meta name="color:Content Background" content="#fff"/>
+        <meta name="color:Header Background" content="#4AADF0"/>
+        <meta name="color:Title" content="#fff"/>
+        <meta name="color:Description" content="#094E7C"/>
+        <meta name="color:Date" content="#666"/>
+        <meta name="color:Permalinks" content="#4AADF0"/>
+        <meta name="color:Post Title" content="#222"/>    
+        <meta name="color:Text" content="#222"/>
+        <meta name="color:Inline Link" content="#ff9900"/>
+        <meta name="color:Quote" content="#333"/>
+        <meta name="color:Quote Source" content="#666"/>
+        <meta name="color:Link Post" content="#ff9900"/>
+        <meta name="color:Conversation Background 1" content="#f4f4f4"/>
+        <meta name="color:Conversation Background 2" content="#e8e8e8"/>
+        <meta name="color:Conversation Border" content="#ccc"/>
+        <meta name="color:Conversation Text" content="#000"/>
+        <meta name="color:Photo Background" content="#ccc"/>   
+        <meta name="color:Video Background" content="#eee"/>   
+        <!-- END DEFAULT COLORS -->
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>{Title}</title>
+        <link rel="icon" href="{Favicon}"/>
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+        <meta name="viewport" content="width=675"/> <!-- iPhone -->
+
+        <style type="text/css">
+            body {
+                color:            {color:Text};
+                background-color: {color:Background};
+                font-family:      'Lucida Grande', Helvetica, sans-serif;
+            }
+            
+            #content {
+                width:            570px;
+                margin:           auto;
+                padding:          35px;
+                background-color: {color:Content Background};
+            }
+
+            a {
+                color:            {color:Inline Link};
+            }
+
+            h1 {
+                padding:          0px;
+                margin:           0px;
+                font:             Normal 30px Helvetica, sans-serif;
+                line-height:      33px;
+                letter-spacing:   -1px;
+            }
+            
+            h1 a {
+                color:            {color:Title};
+                text-decoration:  none;
+            }
+
+            div#header {
+                background-color: {color:Header Background};
+                margin:           -20px -20px 30px -20px;
+                padding:          20px 30px 20px 30px;
+            }
+
+            div#description {
+                font-size:        15px;
+                margin-top:       10px;
+                color:            {color:Description};
+            }
+            
+            div#description a {
+                color:            {color:Description};
+            }
+            
+            .date {
+                font:             Normal 16px Helvetica, sans-serif;
+                color:            {color:Date};
+                line-height:      32px;
+                height:           28px;
+                padding-top:      7px;
+                background:       {color:Content Background} url('/themes/3/stripes.gif') top repeat-x;
+                border-bottom:    dotted 1px #bbb;
+                margin-bottom:    10px;
+                text-transform:   uppercase;
+            }
+            
+            .post {
+                margin-bottom:    40px;
+                position:         relative;
+            }
+
+            .post h2 {
+                font-weight:      Normal;
+                font-size:        20px;
+                color:            {color:Post Title};
+                margin:           0px 0px 10px 0px;
+            }
+
+            .post h2 a {
+                color:            {color:Post Title};
+                text-decoration:  none;
+            }
+            
+            /* Regular Post */
+            .post .regular {
+                font-size:        12px;
+                line-height:      17px;
+            }
+
+            .post .regular blockquote {
+                font-style:       italic;
+            }
+            
+            /* Footer */
+            #footer {
+                margin:           20px 0px 0px 0px;
+                text-align:       center;
+                font-size:        18px;
+            }
+            
+            #footer a {
+                text-decoration:  none;
+                color:            {color:Text};
+            }
+            
+            #footer a:hover {
+                text-decoration:  underline;
+            }
+
+            #footer p.tiny {
+                margin:           30px 0px 0px 0px;
+                font-size:        11px;
+            }
+            
+            #footer p.tiny a {
+                text-decoration:  underline;
+                color:            {color:Text};
+                font-weight:      bold
+            }
+            
+            #footer p.tiny .dim {
+                filter:           alpha(opacity=50); 
+                -moz-opacity:     0.5; 
+                opacity:          0.5;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <div id="header">
+                <h1><a href="/">{Title}</a></h1>
+                
+                {block:Description}
+                    <div id="description">
+                        {Description}
+                    </div>
+                {/block:Description}
+            </div>
+            
+            {block:Posts}
+                {block:NewDayDate}
+                    <div class="date">
+                        {Month} {DayOfMonth}, {Year}
+                    </div>
+                {/block:NewDayDate}
+            
+                <div class="post">
+                    {block:Regular}
+                        <div class="regular">
+                            {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                            {Body}
+                            <a href="{Permalink}" class="permalink">{TimeAgo}</a>
+                        </div>
+                    {/block:Regular}
+                </div>
+            {/block:Posts}
+
+            <div id="footer">
+                <p class="tiny">
+                    Subscribe via <a href="{RSS}">RSS</a>
+                     <span class="dim">/</span> 
+                    Powered by <a href="http://feedvolley.com/">Feedvolley</a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

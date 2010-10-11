@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{Title}</title>
+
+<style type="text/css"> 
+/* Photo gallery template ||| Joshuaink.com ||| March 2005 ||| Free to use but this credit must remain in place */
+
+*{
+	margin:0;
+	padding:0;
+	font-size:100%;
+
+}
+
+body{
+	font:80%/110% Verdana, Helvetica, sans-serif;
+	color:#666;
+	background:#F6F5F0;
+	text-align:center;
+}
+
+a{
+	color:#666;
+	text-decoration:none;
+}
+
+p,
+h2{
+	margin:15px 5px;
+}
+
+h2{
+	color:#999;
+}
+
+#wrap{
+	width:840px;
+	margin:0 auto;
+	position:relative;
+}
+
+#header{
+	margin-bottom:20px;
+}
+
+#header a{
+	text-decoration:underline;
+}
+
+
+
+#main-content li{
+	width:240px;
+	border:solid #CCC;
+	border-width:0 1px 1px 0;
+/* uncomment and adjust this if you want a rounded frame in Mozilla browsers
+	-moz-border-radius:20px;
+ */
+	background:#FFF;
+	padding:10px;
+	text-align:center;
+	position:relative;
+	float:left;
+	display:inline;
+	margin:5px;
+}
+
+#fullplate-navigation{
+	list-style:none;
+	margin:5px 0 0 45px;
+
+}
+
+#fullplate-navigation li{
+	display:block;
+	float:left;
+	width:210px;
+		
+}
+
+#previous{
+	text-align:left;
+}
+
+#next{
+	text-align:right;
+}
+
+
+#fullplate-navigation li a{
+	display:block;
+	width:190px;
+	padding:10px;
+}
+
+#fullplate-navigation li a:hover{
+	color:#333;
+}
+
+
+
+#fullplate-photo{
+	border:solid #EEE;
+	border-width:0 1px 1px 0;
+/* uncomment and adjust this if you want a rounded frame in Mozilla browsers
+	-moz-border-radius:20px;
+ */
+	background:#FFF;
+	padding:5px 15px 15px 15px;
+	margin:0 auto;
+	width:600px;
+}
+
+
+
+
+#main-content  a span{
+/*\*/
+	position:absolute;
+	left:-9999px;
+
+}
+
+#main-content a:hover span{	
+	top:10px;
+	left:10px;
+	width:202px;
+	font-weight:bold;
+	background:#FFF;
+	color:#999;
+	padding:5px 0 5px 0;
+	text-transform:uppercase;
+	font-size:80%;
+	border:1px solid #EEE;
+	border-width:0 0 10px 0;
+	filter: alpha(opacity=100);
+	/*-moz-opacity:.8;
+		opacity:.80;*/
+/**/
+} 
+
+
+img{
+	border:1px solid #EEE;
+/* delete line above and uncomment this for an inset effect
+	border:1px solid;
+	border-color:#666 #EEE #EEE #666;
+ */
+}
+
+#foot{
+	padding-top:10px;
+	margin-bottom:20px;
+	clear:left;
+}
+
+</style>
+
+
+
+</head>
+
+<body> 
+<div id="wrap"> 
+  <div id="header"> 
+  </div>
+  <h2>{Title}</h2>
+  <div id="main-content"> 
+    <ul> 
+	
+	    {block:Posts}
+			{block:Regular}
+		  		<li><a href="{Permalink}">{Body}</a></li> 
+			{/block:Regular}
+	    {/block:Posts}
+	
+    </ul> 
+  </div> 
+  <div id="foot"> 
+    <p>Theme by <a href="http://joshuaink.com">joshuaink.com</a>, adapted for Feedvolley.</p> 
+  </div> 
+</div> 
+</body>
+</html>
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=320,user-scalable:yes" />
+	<meta name="powered-by" content="Feedvolley" />
+
+	<title>{Title}</title>
+	
+	<link rel="stylesheet" href="/assets/css/reset.css" type="text/css" media="all" />
+	
+	<style type="text/css" media="screen, projection">
+		body {
+			background: #fff;
+			color: #222;
+			font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		
+		a {
+			text-decoration: none;
+			border: none;
+			outline: none;
+		}
+		
+		#header, #posts .post {
+			padding: 8px;
+		}
+		
+		#header {
+			background: #8d9fb6;
+			color: #4b5560;
+			text-shadow: #c2ccd9 0 1px 1px;
+		}
+		
+		#title {
+			float: left;
+		}
+		
+		#title h1 a {
+			font-weight: bold;
+			font-size: 34px;
+			line-height: 42px;
+			color: #4b5560;
+		}
+		
+		#powered_by {
+			background: #222;
+			color: #000;
+			padding: 5px;
+		}
+		
+		#powered_by a {
+			color: #ddf3fb;
+		}
+		
+		.clearfix:after,
+		#header:after {
+			clear: both;
+			content: ".";
+			display: block;
+			visibility: hidden;
+			height: 0;
+		}
+		
+		.post {
+			margin-bottom: 5px;
+			background: #fff;
+			padding: 5px;
+			border-bottom: 1px solid #ddd;
+		}
+		
+		.post h2 a {
+			font-size: 18px;
+			font-weight: bold;
+			color: #222;
+		}
+		
+		.post h2 a:hover, .post p a:hover {
+			color: #555;
+		}
+		
+		.post p {
+			margin-top: 7px;
+			line-height: 17px;
+		}
+		
+		.post p a {
+			color: #ff5e3c;
+		}
+		
+		.post strong, .post b { font-weight: bold; }
+		.post em, .post i { font-style: italic; }
+	</style>
+</head>
+
+<body>
+<div id="wrap">
+	<div id="header">
+		<div id="title">
+			<h1><a href="">{Title}</a></h1>
+		</div>
+	</div>
+	
+	<div id="posts">
+	{block:Posts}
+		{block:Text}
+		<div class="post">
+			{block:Title}
+			<h2><a href="{Permalink}">{Title}</a></h2>
+			{/block:Title}
+			<p>{Body}</p>
+		</div>
+		{/block:Text}
+	{/block:Posts}
+	</div>
+	
+    <div id="powered_by">
+		<a href="#">Powered by Feedvolley</a>
+	</div>
+</div>
+</body>
+</html>

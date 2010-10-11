@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>{Title}</title>
+	<link rel="shortcut icon" href="{Favicon}" />
+	<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+	
+	<style type="text/css">
+	* {
+	  margin: 0;
+	  padding: 0;
+	}
+
+	body {
+	  color: #000;	
+	  font: 80% "Helvetica Neue", Helvetica, Arial, sans-serif;
+	  background: #fff;
+	}
+
+	a {
+	  outline: none;
+	  color: #52738d;
+	  text-decoration: none;
+	}
+
+	a:hover {
+	  color: #141618;
+	}
+
+	a img {
+	  border: none;
+	}
+
+	#page {
+	  width: 829px;
+	  margin: 10px auto;
+	  padding: 0 0 20px 0;
+	}
+
+	#header {
+	  background: url(http://toys.tumblrist.com/tumblrist_theme/img/shad.gif) no-repeat bottom;
+	  width: 829px;
+	  padding: 0 0 20px 0;
+	}
+
+	#header h1 {
+	  font-size: 48px;
+	  letter-spacing: -1px;
+	  padding: 0 0 0 40px;
+	}
+
+	#header h1 a {
+	  color: #000;
+	  margin: 0 16px 0 0;
+	}
+
+	#header span {
+	  font-size: 24px;
+	  color: #38688a;
+	}
+
+	#content {
+	  width: 780px;
+	  margin: 20px auto 0 auto;
+	  padding: 0;
+	}
+
+	#main {
+	  float: left;
+	  width: 590px;
+	  margin: 0 20px 0 0;
+	  padding: 0;
+	}
+
+	#sidebar {
+	  float: left;
+	  width: 136px;
+	  background: url(http://data.tumblr.com/3pzJIHSpJ78qinhtMpKsvfWd_400.gif) no-repeat top left;
+	  padding: 0 0 0 20px;
+	  margin: 0;
+	}
+
+	#sidebar img.avatar {
+	  width: 128px;
+	  height: 128px;
+	  padding: 2px;
+	  background: #fff;
+	  border: 1px solid #ccc;
+	}
+
+	#sidebar p.description {
+	  margin: 10px 0;
+	  font-size: 14px;
+	}
+
+	#sidebar img.feed {
+	  width: 48px;
+	  height: 48px;
+	  margin: 10px 0;
+	}
+
+	#sidebar p.cred {
+	  margin: 10px 0;
+	}
+
+
+	.post {
+	  margin: 0 0 40px 0;
+	}
+
+	.postdate {
+	  float: left;
+	  width: 70px;
+	  height: 70px;
+	  background: url(http://data.tumblr.com/3pzJIHSpJ78qgohnVfaPmXDC_100.gif) no-repeat;
+	  margin: 0 20px 0 0;
+	  text-align: center;
+	  color: #fff;
+	  font-weight: bold;
+	  line-height: 20px;
+	  padding: 5px 0 0 0;
+	  text-shadow: #666 0 0 6px;
+	}
+
+	.postdate .datem {
+	  text-transform: uppercase;
+	  font-size: 18px;
+	}
+
+	.postdate .dated {
+	  font-size: 24px;
+	}
+
+	.postdate .datey {
+	  font-size: 18px;
+	}
+
+	.postcontent {
+	  float: left;
+	  width: 500px;
+	  font-size: 12px;
+	  line-height: 18px;
+	}
+
+	.postcontent h2 {
+	  font-weight: bold;
+	  font-size: 20px;
+	  line-height: 22px;
+	  letter-spacing: -1px;
+	  margin: 0 0 8px 0;
+	}
+
+	.postcontent p {
+	  margin: 0 0 12px 0;
+	}
+
+	.postcontent blockquote {
+	  padding: 0 0 0 10px;
+	  margin: 0 0 18px 0;
+	  border-left: 1px solid #111;
+	}
+
+	.postcontent .descrip {
+	  margin: 10px 0 0 0;
+	}
+
+
+	.navigation {
+	  color: #333;
+	  text-align: center;
+	  font-size: 13px;
+	  padding: 0;
+	  margin: 0 0 20px 0;
+	}
+
+	.navigation a {
+	  font-weight: bold;
+	}
+
+	.clearfix:after {
+	  content: ".";
+	  display: block;
+	  clear: both;
+	  visibility: hidden;
+	  line-height: 0;
+	  height: 0;
+	}
+
+	.clearfix {
+	  display: inline-block;
+	}
+
+	html[xmlns] .clearfix {
+	  display: block;
+	}
+
+	* html .clearfix {
+	  height: 1%;
+	}
+
+	{CustomCSS}
+	</style>
+	
+</head>
+
+<body>
+	
+	<div id="page">
+	
+	<div id="header">
+		<h1><a href="/">{Title}</a><span>via Feedvolley</span></h1>
+	</div>
+	
+	<div id="content" class="clearfix">
+			
+		<div id="main">
+								
+			{block:Posts}
+			<div class="post clearfix">
+			
+			<div class="postdate">
+				<div class="datem">{ShortMonth}</div>
+				<div class="dated">{DayOfMonthWithZero}</div>
+				<div class="datey">{Year}</div>
+			</div>
+			
+			{block:Text}
+			<div class="postcontent text {TagsAsClasses}">
+				{block:Title}<h2>{Title}</h2>{/block:Title}
+				{Body}
+				<p class="perma"><a href="{Permalink}" title="permalink to this post">#</a></p>
+			</div>
+			{/block:Text}
+				
+			</div> <!-- /post -->
+			{/block:Posts}
+			
+				
+		</div> <!-- /main -->
+	
+		
+		<div id="sidebar">
+			
+			<p class="description">{Description}</p>
+			
+			<a href="{RSS}"><img src="http://data.tumblr.com/3pzJIHSpJ78qgzol1YbTTIxM_100.gif" class="feed" /></a>
+			
+			<p class="cred">Adapted from <a href="http://tumblr.com/" title="Tumblr: ADHD blogging.">Tumblr</a> theme <a href="http://tumblrist.tumblr.com/" title="tumblrist theme">tumblrist</a><br />by <a href="http://topherchris.com/" title="topherchris.com">topherchris</a>.</p>  
+			
+			<p class="cred">powered by <a href="http://feedvolley.com/">Feedvolley</a>.</p>
+
+		</div> <!-- /sidebar -->
+
+
+	</div> <!-- /content -->
+	
+	</div> <!-- /page -->
+
+</body>
+</html>

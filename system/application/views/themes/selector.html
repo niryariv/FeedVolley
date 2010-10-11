@@ -1,0 +1,32 @@
+<table class="themes_selector">
+	<tr>
+	<? foreach ($themes as $t): ?>	
+		<td>
+			<a href="javascript:set_selected(<?= $t->id ?>)">
+				<img id="theme_<?= $t->id ?>" src="/assets/images/thumbnails/<?= url_title($t->name, 'underscore') ?>.png" alt="<?= $t->name ?>" />
+			</a><br />
+			<?= $t->name?>
+		</td>
+	<? endforeach; ?>
+	</tr>
+</table><br />
+
+<input type="hidden" name="theme_id" value="1" />
+
+<script type="text/javascript" charset="utf-8">
+
+function set_selected(id) {
+	
+	<? foreach ($themes as $t): ?>
+		$('#theme_<?= $t->id ?>').css("border-color", "#fdfefe");
+	<? endforeach; ?>
+	
+	if (id != 0)
+		$('#theme_'+id).css("border-color", "#fee676");
+		
+	document.forms[0].theme_id.value = id;
+	
+	if (typeof update_advanced == 'function') // for edit page
+		update_advanced();
+} 
+</script>
